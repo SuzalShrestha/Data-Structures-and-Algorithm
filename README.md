@@ -8,7 +8,7 @@ The repository is organized by week, with each week containing folders for each 
 
 ## Data Structures and Algorithms
 
-`
+```Structure
   ├── week-1/
   │   ├── day-1/
   │   │   ├── code/ (Your C++ code implementations)
@@ -17,7 +17,7 @@ The repository is organized by week, with each week containing folders for each 
   │   │   └── ... (similar structure)
   │   └── ... (more weeks)
   └── ...
-`
+```
 
 ## Contributions
 
