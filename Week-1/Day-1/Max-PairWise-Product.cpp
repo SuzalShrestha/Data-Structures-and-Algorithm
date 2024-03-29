@@ -25,6 +25,9 @@ using std::vector;
 // }
 long long MaxPairwiseProductFast(const vector<int> &numbers) // Optimized Solution
 {
+
+    // Time Complexity: O(n)
+    // Space Complexity: O(1)
     int n = numbers.size();
     int max_index1 = -1;
     for (int i = 0; i < n; i++)
