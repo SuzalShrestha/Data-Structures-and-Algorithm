@@ -47,6 +47,17 @@ long long MaxPairwiseProductFast(const vector<int> &numbers) // Optimized Soluti
     }
     return ((long long)(numbers[max_index1])) * numbers[max_index2];
 }
+// LeetCode Solution
+// Approach: Sort the array and return the product of last two elements.
+// Most optimal solution
+// Time Complexity: O(nlogn)
+// Space Complexity: O(1)
+int maxProduct(vector<int> &nums)
+{
+    sort(nums.begin(), nums.end());
+    return ((nums[nums.size() - 1]) * (nums[nums.size() - 2]));
+}
+
 int main()
 {
     // stress testing
