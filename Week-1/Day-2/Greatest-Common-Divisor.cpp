@@ -1,5 +1,11 @@
 #include <iostream>
+#include <vector>
+#include <algorithm>
 using namespace std;
+using std::vector;
+// Question: Find the Greatest Common Divisor of two numbers.
+// Input : Two integers a and b.
+// Output : Greatest Common Divisor of a and b.
 int GCD(int a, int b) // Native Solution
 {
     // Time Complexity: O(a+b)
@@ -26,6 +32,49 @@ int GCDfast(int a, int b) // Optimized Solution from property of GCD also called
     // property of GCD : gcd(a,b) = gcd(b,a%b) until a%b = 0
     return GCDfast(b, a % b);
 }
+
+#include <vector>
+// LeetCode Solution
+// Optimal Solution on speed
+//  Approach: Find the minimum and maximum of the array and find the GCD of the two numbers.
+//  Time Complexity: O(n)
+//  Space Complexity: O(1)
+int findMin(std::vector<int> a)
+{
+    int m = a[0];
+    for (auto i : a)
+    {
+        m = std::min(m, i);
+    }
+    return m;
+}
+int findMax(vector<int> a)
+{
+    int m = a[0];
+    for (auto i : a)
+    {
+        m = max(m, i);
+    }
+    return m;
+}
+int GCD(int a, int b)
+{
+    while (a != b)
+    {
+        if (a > b)
+            a -= b;
+        else
+            b -= a;
+    }
+    return a;
+}
+int findGCD(vector<int> &nums)
+{
+    int mi = findMin(nums);
+    int ma = findMax(nums);
+    return GCD(mi, ma);
+}
+
 int main()
 {
     int a, b;

@@ -1,6 +1,8 @@
 #include <iostream>
 using namespace std;
-
+// Question: Find the nth Fibonacci number.
+// Input : An integer n.
+// Output : The nth Fibonacci number.
 int fibonacci(int n) // native resursive solution
 {
     // Time Complexity: O(2^n)
