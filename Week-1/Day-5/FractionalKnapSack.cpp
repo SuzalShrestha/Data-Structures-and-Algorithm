@@ -7,13 +7,13 @@ using namespace std;
 int bestItem(int size, vector<int> weights, vector<int> values)
 {
     int best_index = 0;
-    int best = 0;
-    float ratioVperW = 0;
+    double best = 0;
+    double ratioVperW = 0;
     for (int i = 0; i < size; i++)
     {
         if (weights[i] > 0)
         {
-            ratioVperW = values[i] / weights[i];
+            ratioVperW = static_cast<double>(values[i] / weights[i]);
             if (ratioVperW > best)
             {
                 best = ratioVperW;
@@ -36,7 +36,7 @@ double get_optimal_value(int capacity, vector<int> weights, vector<int> values)
         }
         int best = bestItem(n, weights, values);
         float quantity = min(capacity, weights[best]);
-        value = value + quantity * (values[best] / weights[best]);
+        value = value + quantity * (static_cast<double>(values[best] / weights[best]));
         weights[best] = weights[best] - quantity;
         amounts[best] = amounts[best] + quantity;
         capacity = capacity - quantity;
