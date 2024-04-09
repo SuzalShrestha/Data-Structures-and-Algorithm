@@ -1,14 +1,19 @@
 #include <iostream>
 #include <vector>
 using namespace std;
+// Linear Search
+// Time Complexity: O(n)
+// Space Complexity: O(n)
+// Search the target element in the array
+// Array may or may not be sorted
 int search(vector<int> a, int target)
 {
     int n = a.size();
     for (int i = 0; i < n; i++)
     {
-        if (a[i] == target)
+        if (a[i] == target) // If target element is found
         {
-            return i;
+            return i; // Return the index of the target element
         }
     }
     return -1;
